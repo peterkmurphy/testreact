@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load render_bundle from webpack_loader %}
+{% block meta_title %}Testreact{% endblock %}
+{% block title %}Testreact{% endblock %}
+{% block main %}
+<div id="meetuplist" data-groupname="{{ groupname }}" data-apikey="{{ apikey }}"></div>
+
+ {% render_bundle 'main' %}
+{% endblock %}
