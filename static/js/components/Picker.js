@@ -3,7 +3,11 @@ import PropTypes from 'prop-types'
 
 const Picker = ({ value, onChange, options }) => (
     <div className="form-group">
-     <label for="sel1">Click on the Meetups that you wish to view:</label>
+     <label for="sel1">Select from the drop down
+     control to list <em>upcoming</em> events or <em>past</em> events.
+     Click on an heading to view information about it.
+     From there, a link leads to the Meetup page for the event, from
+     which you can book to attend.</label>
     <select className="form-control" onChange={e => onChange(e.target.value)}
             value={value} id="sel1">
       {options.map(option =>
