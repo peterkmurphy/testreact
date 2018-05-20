@@ -1,9 +1,13 @@
-{% extends "base.html" %}
+{% extends "pages/page.html" %}
 {% load render_bundle from webpack_loader %}
-{% block meta_title %}Events{% endblock %}
-{% block title %}Events{% endblock %}
-{% block main %}
+{% load mezzanine_tags %}
+
+{% block main %}{{ block.super }}
+
+{% editable page.richtextpage.content %}
+{{ page.richtextpage.content|richtext_filters|safe }}
+{% endeditable %}
 <div id="meetuplist" data-groupname="{{ groupname }}" data-apikey="{{ apikey }}"></div>
 
- {% render_bundle 'main' %}
+{% render_bundle 'main' %}
 {% endblock %}
